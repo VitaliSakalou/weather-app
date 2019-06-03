@@ -10,7 +10,7 @@ const forecast = (lat, long, callback) => {
       {
         body: {
           error: localError,
-          currently: { temperature, precipProbability },
+          currently: { temperature, precipProbability, pressure },
           timezone
         }
       }
@@ -22,7 +22,7 @@ const forecast = (lat, long, callback) => {
       } else {
         callback(
           undefined,
-          `It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain. Timezone: ${timezone}`
+          `It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain. Pressure - ${pressure} Timezone: ${timezone}`
         );
       }
     }
